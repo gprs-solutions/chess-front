@@ -1,0 +1,16 @@
+services:
+  chess-front:
+    build: .
+    container_name: chess_front
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/app
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    networks:
+      - chess_network
+
+networks:
+  chess_network:
+
